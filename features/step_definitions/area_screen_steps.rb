@@ -1,5 +1,5 @@
 Given(/^I land on help popup$/) do
-  texr("Help")
+  text("Help")
 
 end
 
@@ -8,7 +8,7 @@ When(/^I click on Got it button$/) do
 end
 
 Then(/^I land on Area screen$/) do
-  texr("Area")
+  text("Area")
 end
 
 # And(/^I see Sq Kilometre in From header$/) do
