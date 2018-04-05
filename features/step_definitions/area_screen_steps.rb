@@ -42,7 +42,7 @@ When(/^I enter "([^"]*)" to From field$/) do |value|
   find_element(id: "header_value_from").send_keys(value)
 end
 
-Then(/^i get "([^"]*)" in To field$/) do |value|
+Then(/^I get "([^"]*)" in To field$/) do |value|
   actual_value = find_element(id: "header_value_to").text
     equal_assertion(actual_value, value)
 end
@@ -64,12 +64,23 @@ When(/^I select "([^"]*)" from left column$/) do |value|
 
 end
 
+When(/^I select "([^"]*)" from right column$/) do |value|
+  find_element(id:"radio_group_to").find_element(xpath: "//android.widget.RadioButton[@text='#{value}']").click
+end
 
 
 
+
+
+
+
+
+# Egual assertion of two values
 private
 def equal_assertion(actual_value, value)
   if actual_value != value
     fail("Expected value is #{value} but actual is #{actual_value}")
   end
 end
+
+

@@ -16,7 +16,7 @@ Appium::Driver.new(caps, true)
 Appium.promote_appium_methods Object
 
 
-
+#  Select item and scroll method
 def select_menu_item(value)
 
   current_screen = get_source
@@ -34,4 +34,6 @@ def select_menu_item(value)
     fail("Element #{value} was not found in menu")
   end
 end
+
+
 

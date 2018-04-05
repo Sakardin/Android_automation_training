@@ -17,7 +17,6 @@ Feature: User is able to convert area units
       Then I see "Sq Metre" in From header
       And I see "Sq Kilometre"  in To header
 
-@wip
       Scenario Outline: User is able to convert default units
         Given I click on Clear button
         When I enter "<target>" to From field
@@ -38,8 +37,18 @@ Feature: User is able to convert area units
     Scenario:
       When I select "Hectare" from left column
       Then I see "Hectare" in From header
-      And i get "1000" in To field
+      And i get "10000" in To field
+@wip
+      Scenario Outline: Change column TO
+        When I select "<target>" from right column
+        Then I see "<target>"  in To header
+        And I get "<result>" in To field
 
+        Examples:
+        |target|result|
+        |Hectare|100  |
+        |Sq Kilometre|1|
+        |Sq Metre    | 1000000|
 
 
 
